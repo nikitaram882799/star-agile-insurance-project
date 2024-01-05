@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: insurance_application
+  name: insurance-application
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: insurance_application
+      app: insurance-application
   template:
     metadata:
       labels:
-        app: insurance_application
+        app: insurance-application
     spec:
       containers:
-        - name: insurance_application
+        - name: insurance-application
           image: nikitaram2799/insurance:latest
           ports:
             - containerPort: 8081
@@ -21,10 +21,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: insurance_application-service #The name of the Kubernetes Service to be created in the Kubernetes cluster
+  name: insurance-application-service #The name of the Kubernetes Service to be created in the Kubernetes cluster
 spec:
   selector:
-    app: insurance_application 
+    app: insurance-application 
   type: LoadBalancer #Type of the Kubernetes Service
   ports:
   - protocol: TCP
