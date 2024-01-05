@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: service #The name of the Kubernetes Service to be created in the Kubernetes cluster
+  name: insurance_application-service #The name of the Kubernetes Service to be created in the Kubernetes cluster
 spec:
   selector:
-    app: insurance-application 
+    app: insurance_application 
   type: LoadBalancer #Type of the Kubernetes Service
   ports:
   - protocol: TCP
